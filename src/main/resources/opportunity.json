@@ -1,0 +1,60 @@
+{
+  "id": "4c12e81e-8542-4b52-acd0-424a949c9b54",
+  "timestamp": "2019-12-03 11:16:20.447",
+  "entityId": 1119715906,
+  "entityClass": "com.ps.customer.Customer",
+  "eventType": "POST_COMMIT_UPDATE",
+  "context": {
+    "application": "ps-app-orderservice",
+    "meta": [
+      "started:ps-app-api"
+    ],
+    "request": {
+      "id": 1120718589,
+      "zip": "12345",
+      "lastName": "last",
+      "defaultBillingAddress": true,
+      "customerId": 1119715906,
+      "street": "RiskCheckStrasse",
+      "defaultShippingAddress": true,
+      "active": true,
+      "streetNumber": "1",
+      "firstName": "test",
+      "salutation": 1,
+      "country": "DE",
+      "city": "TestCity",
+      "action": "updateAddressAndCorrespondingOrders",
+      "controller": "address",
+      "addressId": "1120718589"
+    }
+  },
+  "stateChange": {},
+  "state": {
+    "version": 220,
+    "accountExpired": false,
+    "accountLocked": false,
+    "dateCreated": "Nov 6, 2019 1:40:48 PM",
+    "email": "riya.gupta+1017@outfittery.de",
+    "enabled": true,
+    "lastUpdated": "Dec 3, 2019 11:16:20 AM",
+    "migrationMergeFlag": false,
+    "passwordExpired": false,
+    "additionalInfo": {},
+    "credit": 0,
+    "data": {},
+    "defaultPage": "COM",
+    "defaultPaymentMethod": 1,
+    "firstName": "test",
+    "formal": false,
+    "gtcAccepted": true,
+    "lastName": "Last",
+    "migrationWelcomeMessage": true,
+    "profile": 1119715904,
+    "riskClass": "RC1",
+    "salutation": 1,
+    "shippingCountryCode": "DE",
+    "socialInfo": {},
+    "stylelist": 183975748,
+    "token": "2ad986b5458a4bd4b7ea0be9b246e51a"
+  }
+}

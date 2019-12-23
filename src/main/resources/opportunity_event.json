@@ -1,0 +1,31 @@
+{
+  "id": "f6dd478f-f884-400c-9f14-dd9e490e481b",
+  "timestamp": "2019-12-03 12:00:00.315",
+  "entityId": 4909689,
+  "entityClass": "com.ps.opportunity.domain.OpportunityEvent",
+  "eventType": "POST_COMMIT_CREATE",
+  "context": {
+    "application": "ps-app-opportunityservice"
+  },
+  "stateChange": {},
+  "state": {
+    "eventDate": {
+      "date": {
+        "year": 2019,
+        "month": 12,
+        "day": 3
+      },
+      "time": {
+        "hour": 12,
+        "minute": 0,
+        "second": 0,
+        "nano": 313000000
+      }
+    },
+    "eventType": "OPPORTUNITY_DISCARDED",
+    "meta": {
+      "actorRole": "SYSTEM"
+    },
+    "opportunity": 3542
+  }
+}

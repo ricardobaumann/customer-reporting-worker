@@ -1,0 +1,36 @@
+{
+  "id": "fca1af89-ccaa-4ebb-b6b1-53fa64ab5f17",
+  "timestamp": "2019-12-09 10:16:00.826",
+  "entityId": 15998,
+  "entityClass": "com.ps.opportunity.domain.SubscriptionEvent",
+  "eventType": "POST_COMMIT_CREATE",
+  "context": {
+    "application": "ps-app-opportunityservice"
+  },
+  "stateChange": {},
+  "state": {
+    "customerId": 1118839847,
+    "eventDate": {
+      "date": {
+        "year": 2019,
+        "month": 12,
+        "day": 9
+      },
+      "time": {
+        "hour": 10,
+        "minute": 16,
+        "second": 0,
+        "nano": 823000000
+      }
+    },
+    "eventType": "SUBSCRIPTION_BOX_CREATED",
+    "meta": {
+      "id": 4951,
+      "customerId": 1118839847,
+      "planCode": "6month_plan",
+      "currentOpportunityId": 288190,
+      "actorRole": "SYSTEM"
+    },
+    "subscriptionId": 4951
+  }
+}

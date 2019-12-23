@@ -1,0 +1,24 @@
+hibernate-events.enabled: true
+
+spring:
+  rabbitmq:
+    host: 192.168.3.17
+    virtualHost: /
+    username: admin
+    password: 3s2k134saioG
+  elasticsearch:
+    rest:
+      password: "changeme"
+      username: "elastic"
+      connection-timeout: 5s
+      read-timeout: 60s
+  application:
+    name: "customer-reporting-worker"
+
+
+management:
+  endpoints:
+    enabled-by-default: true
+  health:
+    elasticsearch:
+      enabled: false

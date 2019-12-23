@@ -1,0 +1,59 @@
+{
+  "id": "dfa47e83-f792-4568-9ccf-1cd066e5ecbf",
+  "timestamp": "2019-12-03 12:30:55.912",
+  "entityId": 1036906809,
+  "entityClass": "com.ps.customer.Customer",
+  "eventType": "POST_COMMIT_UPDATE",
+  "context": {
+    "application": "ps-app-customerservice",
+    "meta": [
+      "started:ps-app-api"
+    ],
+    "request": {
+      "lastName": "lnew\u003d-123±./\\]}\u0026^%$#@!`!)(_980|\";:,~§",
+      "email": "riya.gupta+7@outfittery.de",
+      "firstName": "1234567890abvcjiejw@@",
+      "id": "1036906809",
+      "action": "update",
+      "controller": "customer"
+    }
+  },
+  "stateChange": {
+    "firstName": {
+      "oldState": "test",
+      "newState": "1234567890abvcjiejw@@"
+    },
+    "lastName": {
+      "oldState": "Auto",
+      "newState": "lnew\u003d-123±./\\]}\u0026^%$#@!`!)(_980|\";:,~§"
+    }
+  },
+  "state": {
+    "version": 8592,
+    "accountExpired": false,
+    "accountLocked": false,
+    "dateCreated": "Apr 26, 2018 12:10:05 PM",
+    "email": "riya.gupta+7@outfittery.de",
+    "enabled": true,
+    "lastUpdated": "Dec 3, 2019 12:30:55 PM",
+    "migrationMergeFlag": false,
+    "passwordExpired": false,
+    "additionalInfo": {},
+    "credit": 0,
+    "data": {},
+    "defaultPage": "COM",
+    "defaultPaymentMethod": 1,
+    "firstName": "1234567890abvcjiejw@@",
+    "formal": false,
+    "gtcAccepted": true,
+    "lastName": "lnew\u003d-123±./\\]}\u0026^%$#@!`!)(_980|\";:,~§",
+    "migrationWelcomeMessage": true,
+    "profile": 1036906808,
+    "riskClass": "RC1",
+    "salutation": 1,
+    "shippingCountryCode": "DE",
+    "socialInfo": {},
+    "stylelist": 208355766,
+    "token": "16ff3df5599a4cda85339f263de32c8b"
+  }
+}

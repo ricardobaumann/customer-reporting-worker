@@ -1,0 +1,131 @@
+{
+  "id": "f907a1c2-03bb-4fd2-848f-833461568583",
+  "timestamp": "2019-12-04 15:18:31.585",
+  "entityId": 1120765558,
+  "entityClass": "com.ps.customer.Profile",
+  "eventType": "POST_COMMIT_UPDATE",
+  "context": {
+    "application": "ps-app-api",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
+    "meta": [],
+    "request": {
+      "blazersDefault": 230,
+      "shirtUpper": 80,
+      "jeansDefault": 120,
+      "shirtLower": 60,
+      "customerId": "1120765560",
+      "blazersUpper": 230,
+      "jeansUpper": 120,
+      "jeansLower": 80,
+      "blazersLower": 160,
+      "shoesDefault": 130,
+      "shoesLower": 90,
+      "shirtDefault": 80,
+      "shoesUpper": 130,
+      "action": "update",
+      "controller": "profilePriceRange"
+    }
+  },
+  "stateChange": {
+    "absoluteBudgetMaximumForJeans": {
+      "newState": 150
+    },
+    "absoluteBudgetMaximumForSakkos": {
+      "newState": 350
+    },
+    "absoluteBudgetMaximumForShirts": {
+      "newState": 100
+    },
+    "absoluteBudgetMaximumForShoes": {
+      "newState": 180
+    },
+    "absoluteBudgetMinimumForJeans": {
+      "newState": 80
+    },
+    "absoluteBudgetMinimumForSakkos": {
+      "newState": 100
+    },
+    "absoluteBudgetMinimumForShirts": {
+      "newState": 40
+    },
+    "absoluteBudgetMinimumForShoes": {
+      "newState": 80
+    },
+    "defaultBudgetForJeans": {
+      "newState": 120
+    },
+    "defaultBudgetForSakkos": {
+      "newState": 230
+    },
+    "defaultBudgetForShirts": {
+      "newState": 80
+    },
+    "defaultBudgetForShoes": {
+      "newState": 130
+    },
+    "spendingBudgetForJeansFrom": {
+      "newState": 80
+    },
+    "spendingBudgetForJeansTo": {
+      "newState": 120
+    },
+    "spendingBudgetForSakkosFrom": {
+      "newState": 160
+    },
+    "spendingBudgetForSakkosTo": {
+      "newState": 230
+    },
+    "spendingBudgetForShirtsFrom": {
+      "newState": 60
+    },
+    "spendingBudgetForShirtsTo": {
+      "newState": 80
+    },
+    "spendingBudgetForShoesFrom": {
+      "newState": 90
+    },
+    "spendingBudgetForShoesTo": {
+      "newState": 130
+    }
+  },
+  "state": {
+    "absoluteBudgetMaximumForJeans": 150,
+    "absoluteBudgetMaximumForSakkos": 350,
+    "absoluteBudgetMaximumForShirts": 100,
+    "absoluteBudgetMaximumForShoes": 180,
+    "absoluteBudgetMinimumForJeans": 80,
+    "absoluteBudgetMinimumForSakkos": 100,
+    "absoluteBudgetMinimumForShirts": 40,
+    "absoluteBudgetMinimumForShoes": 80,
+    "dateCreated": "Dec 4, 2019 3:18:22 PM",
+    "defaultBudgetForJeans": 120,
+    "defaultBudgetForSakkos": 230,
+    "defaultBudgetForShirts": 80,
+    "defaultBudgetForShoes": 130,
+    "heightInCm": 170,
+    "lastUpdated": "Dec 4, 2019 3:18:31 PM",
+    "measurementUnit": "EU",
+    "newsletterAccepted": false,
+    "preferredContactChannel": "email",
+    "preferredLanguage": "de",
+    "sendToExternalQuestionnaire": false,
+    "shirtSize": "S",
+    "shoeSize": "40",
+    "spendingBudgetForJeansFrom": 80,
+    "spendingBudgetForJeansTo": 120,
+    "spendingBudgetForSakkosFrom": 160,
+    "spendingBudgetForSakkosTo": 230,
+    "spendingBudgetForShirtsFrom": 60,
+    "spendingBudgetForShirtsTo": 80,
+    "spendingBudgetForShoesFrom": 90,
+    "spendingBudgetForShoesTo": 130,
+    "subscribedToColdCall": true,
+    "subscribedToNewsletter": true,
+    "subscribedToSms": true,
+    "subscribedToStylistEmails": true,
+    "trousersSizeLength": "30",
+    "trousersSizeWidth": "29",
+    "trousersSizeWidthLocal": "29",
+    "weightInKg": 170
+  }
+}

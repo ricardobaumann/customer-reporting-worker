@@ -1,0 +1,334 @@
+{
+  "kind": "ReplicaSet",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "tm-prismo-worker-54bc69c84",
+    "namespace": "theta",
+    "selfLink": "/apis/extensions/v1beta1/namespaces/theta/replicasets/tm-prismo-worker-54bc69c84",
+    "uid": "96944b12-1a81-11ea-ade2-6cb31123326c",
+    "resourceVersion": "100861798",
+    "generation": 2,
+    "creationTimestamp": "2019-12-09T12:44:06Z",
+    "labels": {
+      "app": "tm-prismo-worker",
+      "app_type": "springboot",
+      "pod-template-hash": "106725740",
+      "role": "app"
+    },
+    "annotations": {
+      "ci_job": "docker builds/job/build tm-prismo-worker image",
+      "clusters": "new",
+      "deployment.kubernetes.io/desired-replicas": "0",
+      "deployment.kubernetes.io/max-replicas": "1",
+      "deployment.kubernetes.io/revision": "27"
+    },
+    "ownerReferences": [
+      {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "tm-prismo-worker",
+        "uid": "b8e7f6ee-15bc-11ea-abac-6cb311235104",
+        "controller": true,
+        "blockOwnerDeletion": true
+      }
+    ]
+  },
+  "spec": {
+    "replicas": 0,
+    "selector": {
+      "matchLabels": {
+        "app": "tm-prismo-worker",
+        "app_type": "springboot",
+        "pod-template-hash": "106725740",
+        "role": "app"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app": "tm-prismo-worker",
+          "app_type": "springboot",
+          "pod-template-hash": "106725740",
+          "role": "app"
+        },
+        "annotations": {
+          "data": "1575895446359885195",
+          "prometheus.io/probe": "true",
+          "prometheus.io/scheme": "http",
+          "prometheus.io/scrape": "true"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "configmap",
+            "configMap": {
+              "name": "tm-prismo-worker-2",
+              "defaultMode": 420
+            }
+          },
+          {
+            "name": "config",
+            "secret": {
+              "secretName": "tm-prismo-worker-5",
+              "defaultMode": 420
+            }
+          },
+          {
+            "name": "meminfo",
+            "hostPath": {
+              "path": "/var/lib/lxcfs/proc/meminfo",
+              "type": ""
+            }
+          },
+          {
+            "name": "uptime",
+            "hostPath": {
+              "path": "/var/lib/lxcfs/proc/uptime",
+              "type": ""
+            }
+          },
+          {
+            "name": "swaps",
+            "hostPath": {
+              "path": "/var/lib/lxcfs/proc/swaps",
+              "type": ""
+            }
+          },
+          {
+            "name": "cpuinfo",
+            "hostPath": {
+              "path": "/var/lib/lxcfs/proc/cpuinfo",
+              "type": ""
+            }
+          },
+          {
+            "name": "stat",
+            "hostPath": {
+              "path": "/var/lib/lxcfs/proc/stat",
+              "type": ""
+            }
+          },
+          {
+            "name": "diskstats",
+            "hostPath": {
+              "path": "/var/lib/lxcfs/proc/diskstats",
+              "type": ""
+            }
+          },
+          {
+            "name": "newrelic-cache",
+            "emptyDir": {}
+          }
+        ],
+        "initContainers": [
+          {
+            "name": "init-myservice",
+            "image": "quay.io/outfittery/oft-base-18.04:newrelic-standalone-5.7.0",
+            "resources": {},
+            "volumeMounts": [
+              {
+                "name": "newrelic-cache",
+                "mountPath": "/opt/newrelic"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "containers": [
+          {
+            "name": "tm-prismo-worker",
+            "image": "quay.io/outfittery/tm-prismo-worker:41",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "JAVA_XMS",
+                "value": "1024M"
+              },
+              {
+                "name": "JAVA_XMX",
+                "value": "1024M"
+              },
+              {
+                "name": "JAVA_PERM",
+                "value": "128M"
+              },
+              {
+                "name": "SPRING_PROFILES_ACTIVE",
+                "value": "sentry"
+              },
+              {
+                "name": "NEW_RELIC_APP_NAME",
+                "value": "tm-prismo-worker"
+              },
+              {
+                "name": "NEW_RELIC_LICENSE_KEY",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "name": "newrelic",
+                    "key": "licenseKey"
+                  }
+                }
+              },
+              {
+                "name": "NEW_RELIC_PROCESS_HOST_DISPLAY_NAME",
+                "valueFrom": {
+                  "fieldRef": {
+                    "apiVersion": "v1",
+                    "fieldPath": "spec.nodeName"
+                  }
+                }
+              },
+              {
+                "name": "NEW_RELIC_LOG_LEVEL",
+                "value": "off"
+              },
+              {
+                "name": "SENTRY_DSN",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "name": "sentry-1",
+                    "key": "dsn"
+                  }
+                }
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "3",
+                "memory": "1600Mi"
+              },
+              "requests": {
+                "cpu": "1500m",
+                "memory": "1200Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "config",
+                "readOnly": true,
+                "mountPath": "/config/secret.yml",
+                "subPath": "secret.yml"
+              },
+              {
+                "name": "configmap",
+                "readOnly": true,
+                "mountPath": "/config/configMap.yml",
+                "subPath": "configMap.yml"
+              },
+              {
+                "name": "meminfo",
+                "mountPath": "/proc/meminfo"
+              },
+              {
+                "name": "uptime",
+                "mountPath": "/proc/uptime"
+              },
+              {
+                "name": "swaps",
+                "mountPath": "/proc/swaps"
+              },
+              {
+                "name": "cpuinfo",
+                "mountPath": "/proc/cpuinfo"
+              },
+              {
+                "name": "stat",
+                "mountPath": "/proc/stat"
+              },
+              {
+                "name": "diskstats",
+                "mountPath": "/proc/diskstats"
+              },
+              {
+                "name": "newrelic-cache",
+                "mountPath": "/opt/newrelic"
+              }
+            ],
+            "livenessProbe": {
+              "httpGet": {
+                "path": "/actuator/info",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "initialDelaySeconds": 120,
+              "timeoutSeconds": 12,
+              "periodSeconds": 15,
+              "successThreshold": 1,
+              "failureThreshold": 3
+            },
+            "readinessProbe": {
+              "httpGet": {
+                "path": "/actuator/info",
+                "port": 8080,
+                "scheme": "HTTP"
+              },
+              "initialDelaySeconds": 90,
+              "timeoutSeconds": 5,
+              "periodSeconds": 5,
+              "successThreshold": 1,
+              "failureThreshold": 3
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "automountServiceAccountToken": false,
+        "securityContext": {},
+        "imagePullSecrets": [
+          {
+            "name": "outfittery-registry"
+          }
+        ],
+        "affinity": {
+          "podAntiAffinity": {
+            "requiredDuringSchedulingIgnoredDuringExecution": [
+              {
+                "labelSelector": {
+                  "matchExpressions": [
+                    {
+                      "key": "app",
+                      "operator": "In",
+                      "values": [
+                        "tm-prismo-worker"
+                      ]
+                    }
+                  ]
+                },
+                "topologyKey": "kubernetes.io/hostname"
+              }
+            ]
+          }
+        },
+        "schedulerName": "default-scheduler",
+        "dnsConfig": {
+          "options": [
+            {
+              "name": "single-request-reopen"
+            },
+            {
+              "name": "timeout",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "status": {
+    "replicas": 0,
+    "observedGeneration": 2
+  }
+}

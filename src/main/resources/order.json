@@ -1,0 +1,63 @@
+{
+  "id": "ed47b1a2-467c-4f6c-b7f3-269d27bb14e4",
+  "timestamp": "2019-12-09 11:34:08.471",
+  "entityId": 1120958246,
+  "entityClass": "com.ps.customer.order.Order",
+  "eventType": "POST_COMMIT_UPDATE",
+  "context": {
+    "application": "ps-app-orderservice",
+    "userAgent": "Java/1.7.0_221",
+    "meta": [],
+    "request": {
+      "targetState": "ENABLE_CHECKOUT",
+      "id": "1120958246",
+      "action": "changeOrderState",
+      "controller": "order"
+    }
+  },
+  "stateChange": {
+    "state": {
+      "oldState": 4,
+      "newState": 12
+    }
+  },
+  "state": {
+    "additionalInfo": {
+      "webSessionId": "15599541f40119ef-1"
+    },
+    "currencyCode": "EUR",
+    "customer": 1118619751,
+    "dateCreated": "Dec 9, 2019 11:34:06 AM",
+    "gtcAccepted": false,
+    "isInPayedToleranceZone": true,
+    "lastUpdated": "Dec 9, 2019 11:34:08 AM",
+    "logisticsProcessor": "AUTO",
+    "maxTotalAmountBilledRetailGross": 741.00,
+    "maxTotalAmountBilledRetailGrossOrigin": "RISK_CHECKED_GREEN",
+    "migrationMergeFlag": false,
+    "outfitRequested": true,
+    "paymentMethod": 1,
+    "paymentState": 8,
+    "previewRequested": true,
+    "referralAmount": 0.00,
+    "riskClass": "RC1",
+    "riskClassSource": "ABILITA",
+    "salesChannel": "onsite",
+    "salesSubchannel": "mainheader_repeat",
+    "shippingAddress": 1120958243,
+    "state": 12,
+    "stylelist": 208352357,
+    "totalAmountBasketPurchaseGross": 0.00,
+    "totalAmountBasketRetailGross": 0.00,
+    "totalAmountBilledDiscount": 0.00,
+    "totalAmountBilledDiscountAbsolute": 0.00,
+    "totalAmountBilledDiscountPercentage": 0.00,
+    "totalAmountBilledPurchaseGross": 0.00,
+    "totalAmountBilledRetailGross": 0.00,
+    "totalAmountOutstanding": 0.00,
+    "totalAmountPayed": 0.00,
+    "totalAmountReserved": 1.00,
+    "totalGoodwillCredit": 0.00,
+    "vatPercentage": 19.000
+  }
+}
