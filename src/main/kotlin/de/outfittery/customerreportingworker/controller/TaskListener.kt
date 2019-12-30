@@ -1,6 +1,7 @@
 package de.outfittery.customerreportingworker.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import de.outfittery.customerreportingworker.config.QueueConfig
 import de.outfittery.customerreportingworker.model.StylistTask
 import de.outfittery.customerreportingworker.repo.TaskRepo
 import mu.KLogging
@@ -13,7 +14,7 @@ class TaskListener(private val taskRepo: TaskRepo,
 
     companion object : KLogging()
 
-    @RabbitListener(queues = ["customer-reporting.tasks"], concurrency = "5-20")
+    @RabbitListener(queues = [QueueConfig.TASKS_QUEUE], concurrency = "5-20")
     fun handle(message: String) {
         logger.info("Handling task event: $message")
         objectMapper.readValue(message, StylistTask::class.java)

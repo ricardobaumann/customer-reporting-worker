@@ -14,11 +14,13 @@ class Init(private val customerRepo: CustomerRepo,
 
     override fun run(vararg args: String?) {
 
-        customerRepo.findAll()
-                .forEach { customer ->
-                    customer.id
-                            ?.let { customerReportingService.loadTmViewByCustomerId(it) }
-                            ?.also { logger.info("Result: $it") }
-                }
+        /*
+         customerRepo.findAll()
+                 .forEach { customer ->
+                     customer.id
+                             ?.let { customerReportingService.loadTmViewByCustomerId(it) }
+                             ?.also { logger.info("Result: $it") }
+                 }
+         */
     }
 }
